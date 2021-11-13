@@ -38,7 +38,7 @@ completed?: no
 
 **Button Event Listeners**
 
-- All, Korean, Japan ve China butonları tek tek seçilir.
+- All, Korea, Japan ve China butonları tek tek seçilir.
 - Bu butonlara click eventi atanır.
 
 **Bütün yemekleri listeler; sayfa ilk yüklendiğinde ve All butonunun triggerlanması ile çalışır**
@@ -54,7 +54,7 @@ completed?: no
 - listKoreanFoods fonksiyonu oluşturulur.
 - allMenu değişkeninin içeriği boş bırakılır.
 - menu objesi maplenir.
-- Eğer parametre olarak verilen x'in category'si Korea'a eşit ise
+- Eğer parametre olarak verilen x'in category'si Korea'ya eşit ise
 - `allMenu += createObject(x);`
 - Seçilen section-center'ın içeriğine allMenu değişkeni atanır.
 
