@@ -1,4 +1,5 @@
-const menu = [{
+const menu = [
+  {
     id: 1,
     title: "Tteokbokki",
     category: "Korea",
@@ -71,3 +72,113 @@ const menu = [{
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+const btnContainer = document.querySelector(".btn-container");
+const menuContainer = document.querySelector(".section-center");
+
+listAllFoods();
+
+/* Butonları ID vererek sıfırdan oluşturma */
+
+const createButton = (btnName) => {
+  let btn = `
+  <button type="button" id="${btnName}" class="btn btn-outline-dark btn-item">${btnName}</button>
+  `;
+  return btn;
+};
+
+/* Butonları UI kısmına ekleme */
+
+const addButtonsToUI = () => {
+  btnContainer.innerHTML =
+    createButton("All") +
+    " " +
+    createButton("Korea") +
+    " " +
+    createButton("Japan") +
+    " " +
+    createButton("China");
+};
+addButtonsToUI();
+
+// Button Event Listeners
+
+const btnAll = document
+  .querySelector("#All")
+  .addEventListener("click", listAllFoods);
+
+const btnKorean = document
+  .querySelector("#Korea")
+  .addEventListener("click", listKoreanFoods);
+const btnJapan = document
+  .querySelector("#Japan")
+  .addEventListener("click", listJapanFoods);
+const btnChina = document
+  .querySelector("#China")
+  .addEventListener("click", listChinaFoods);
+
+/* Bütün yemekleri listeler; sayfa ilk yüklendiğinde ve All butonunun triggerlanması ile çalışır */
+
+function listAllFoods() {
+  let allMenu = " ";
+  menu.map((x) => {
+    allMenu += createObject(x);
+  });
+  menuContainer.innerHTML = allMenu;
+}
+
+/* Kore yemeklerini listeleme */
+
+function listKoreanFoods() {
+  let allMenu = " ";
+  menu.map((x) => {
+    if (x.category === "Korea") {
+      allMenu += createObject(x);
+    }
+  });
+  menuContainer.innerHTML = allMenu;
+}
+
+/* Japan yemeklerini listeleme */
+
+function listJapanFoods() {
+  let allMenu = " ";
+  menu.map((x) => {
+    if (x.category === "Japan") {
+      allMenu += createObject(x);
+    }
+  });
+  menuContainer.innerHTML = allMenu;
+}
+
+/* China yemeklerini listeleme */
+
+function listChinaFoods() {
+  let allMenu = " ";
+  menu.map((x) => {
+    if (x.category === "China") {
+      allMenu += createObject(x);
+    }
+  });
+  menuContainer.innerHTML = allMenu;
+}
+
+/* Tek bir yemeğin gövdesini oluşturma */
+
+function createObject(food) {
+  let item = `
+  <div class="menu-items col-lg-6 col-sm-12">
+     <img src="${food.img}" alt="${food.title}" ramen="" class="photo">
+        <div class="menu-info">
+            <div class="menu-title">
+                <h4>${food.title} Ramen</h4>
+                <h4 class="price">${food.price}</h4>
+              </div>
+              <div class="menu-text">
+                ${food.desc}
+              </div>
+            </div>
+          </div>
+  `;
+  return item;
+}
