@@ -54,7 +54,7 @@ completed?: no
 - listKoreanFoods fonksiyonu oluşturulur.
 - allMenu değişkeninin içeriği boş bırakılır.
 - menu objesi maplenir.
-- Eğer parametre olarak verilen x'in category'si Korean'a eşit ise
+- Eğer parametre olarak verilen x'in category'si Korea'a eşit ise
 - `allMenu += createObject(x);`
 - Seçilen section-center'ın içeriğine allMenu değişkeni atanır.
 
